@@ -7,8 +7,8 @@
 
       <nav class="nav-menu">
         <ul>
-          <li class="{{route('admin.home')}}"><a href='#'><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href=""><i class="bx bx-user"></i> <span>Facts</span></span></a></li>
+          <li><a href="{{route('admin.home')}}"><i class="bx bx-home"></i> <span>Home</span></span></a></li>
+          <li><a href="{{route('admin.fact')}}"><i class="bx bx-user"></i> <span>Facts</span></span></a></li>
           <li><a href="{{route('admin.skill')}}"><i class="bx bx-book-content"></i> Skills</a></li>
           <li><a href="{{route('admin.portfolio')}}"><i class="bx bx-envelope"></i> Portfolio</a></li>
           <li><a href="{{route('admin.service')}}"><i class="bx bx-card"></i> Services</a></li>

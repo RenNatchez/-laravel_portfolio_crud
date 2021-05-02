@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Portfolio;
 use App\Models\Utilisateur;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PortfolioController extends Controller
 {
@@ -17,16 +18,22 @@ class PortfolioController extends Controller
         return view('admin.portfolio.create');
     }
     public function store(Request $request){
+        request()->validate([
+            "filter"=>["required"],
+            "image"=>["required"],
+            "lien"=>["required","min:4"],
+        ]);
+        Storage::put('public/img/', $request->file('image'));
         $portfolio = new Portfolio();
         $portfolio->filter = $request->filter;
-        $portfolio->image = $request->image;
+        $portfolio->image = $request->file('image')->hashName();
         $portfolio->lien = $request->lien;
         $portfolio->save();
-     return redirect()->route('admin.portfolio');
+        return redirect()->route('admin.portfolio')->with('success', 'test');
  }
  public function destroy(Portfolio $id) {
      $id->delete();
-     return redirect()->back();
+     return redirect()->back()->with('warning', 'test');
  }
  public function show(Portfolio $id){
      $portfolio = $id;
@@ -39,9 +46,21 @@ class PortfolioController extends Controller
  }
 
  public function udapte(Portfolio $id, Request $request){
+    request()->validate([
+        "filter"=>["required"],
+        "image"=>["required"],
+        "lien"=>["required"],
+    ]);
      $portfolio = $id;
+     if ($request->file('image') != null) {
+        //STORAGE
+        Storage::delete('public/img/'. $portfolio->image);
+        Storage::put('public/img/', $request->file('image'));
+        //DB
+        $portfolio->image = $request->file('image')->hashName();
+        $portfolio->save();
+    }
      $portfolio->filter = $request->filter;
-     $portfolio->image = $request->image;
      $portfolio->lien = $request->lien;
      $portfolio->save();
      return redirect()->route('admin.portfolio');

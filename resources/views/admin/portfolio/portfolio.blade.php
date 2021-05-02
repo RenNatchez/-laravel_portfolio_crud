@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@include('layouts.flash')
 @section('content')
 @include('admin.partials.header')
 <div class="d-flex push-left">

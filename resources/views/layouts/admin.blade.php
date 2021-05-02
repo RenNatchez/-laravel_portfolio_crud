@@ -22,7 +22,6 @@
         <link href={{asset("assets/css/style.css")}} rel="stylesheet">
     </head>
     <body>
-        <h1>YO</h1>
         @yield('content')
         <!-- Vendor JS Files -->
         <script src={{asset("assets/vendor/jquery/jquery.min.js")}}></script>

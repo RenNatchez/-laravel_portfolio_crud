@@ -21,7 +21,11 @@
                 @foreach ($portfolios as $portfolio)
                 <div class="col-lg-4 col-md-6 portfolio-item {{$portfolio->filter}}">
                     <div class="portfolio-wrap">
-                        <img src={{$portfolio->image}} class="img-fluid" alt="">
+                        @if (File::exists('storage/img/' .$portfolio->image))                            
+                        <img src={{asset('storage/img/' .$portfolio->image)}} class="img-fluid" alt="bug">                        
+                        @else
+                        <img src={{asset('assets/img/portfolio/' .$portfolio->image)}} class="img-fluid" alt="bug">                        
+                        @endif
                         <div class="portfolio-links">
                             <a href={{$portfolio->image}} data-gall="portfolioGallery" class="venobox"
                                 title="App 1"><i class="bx bx-plus"></i></a>

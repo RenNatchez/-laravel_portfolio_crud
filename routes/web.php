@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BackController;
+use App\Http\Controllers\FactController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
@@ -48,3 +49,12 @@ Route::delete('/admin/service/{id}/delete', [ServiceController::class, 'destroy'
 Route::get('/admin/service/{id}', [ServiceController::class, 'show'])->name('service.show');
 Route::get('/admin/service/{id}/edit', [ServiceController::class, 'edit'])->name('service.edit');
 Route::put('/admin/service/{id}/udapte', [ServiceController::class, 'udapte'])->name('service.udapte');
+
+// Service
+Route::get('/admin/fact', [FactController::class, 'index'])->name('admin.fact');
+Route::get('/admin/createfact', [FactController::class, 'create'])->name('fact.create');
+Route::post('/admin/factstore', [FactController::class, 'store'])->name('fact.store');
+Route::delete('/admin/fact/{id}/delete', [FactController::class, 'destroy'])->name('fact.destroy');
+Route::get('/admin/fact/{id}', [FactController::class, 'show'])->name('fact.show');
+Route::get('/admin/fact/{id}/edit', [FactController::class, 'edit'])->name('fact.edit');
+Route::put('/admin/fact/{id}/udapte', [FactController::class, 'udapte'])->name('fact.udapte');
