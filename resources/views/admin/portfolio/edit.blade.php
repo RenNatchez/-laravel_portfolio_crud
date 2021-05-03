@@ -11,7 +11,7 @@
                 <label for="image">Votre fichier depuis votre pc :</label>
                 <input type="file" class="form-control-file @error('image') is-invalid @enderror" id="image" name="image">
                 @error('image')
-                <span class="invalid-feedback"> <strong>Selectioner un fichier valide</strong></span>
+                <span class="invalid-feedback pl-3"> <strong>Selectioner un fichier valide</strong></span>
                 @enderror
             </div>
             <div class="form-group">
@@ -27,9 +27,8 @@
                 <input value="{{$portfolio->lien}}" type="text" class="form-control @error('image') is-invalid @enderror" id="lien" name="lien"
                     placeholder="Entrer un lien valide">
                     @error('lien')
-                    <span class="invalid-feedback"> <strong>Entrez un lien valide</strong></span>
+                    <span class="invalid-feedback pl-3"> <strong>Entrez un lien valide</strong></span>
                     @enderror
-
             </div>
             <button type="submit" class="btn btn-success">Submit</button>
         </form>

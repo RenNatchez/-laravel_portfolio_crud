@@ -6,30 +6,33 @@
         <form method="POST" action="{{route('service.store')}}" class="w-50 mx-auto my-5 px-5">
             @csrf
             <div class="form-group">
-                <label for="image">Choix du filtre</label>
-                <select class="form-control" name="image">
-                    <option value="assets/img/portfolio/portfolio-1.jpg">image 1</option>
-                    <option value="assets/img/portfolio/portfolio-2.jpg">image 2</option>
-                    <option value="assets/img/portfolio/portfolio-3.jpg">image 3</option>
-                    <option value="assets/img/portfolio/portfolio-4.jpg">image 4</option>
-                    <option value="assets/img/portfolio/portfolio-5.jpg">image 5</option>
-                    <option value="assets/img/portfolio/portfolio-6.jpg">image 6</option>
-                    <option value="assets/img/portfolio/portfolio-7.jpg">image 7</option>
-                    <option value="assets/img/portfolio/portfolio-8.jpg">image 8</option>
-                    <option value="assets/img/portfolio/portfolio-9.jpg">image 9</option>
+                <label for="logo">Choix D'icone</label>
+                <select class="form-control" name="logo">
+                    <option value="icofont-computer">Ordinateur</option>
+                    <option value="icofont-chart-bar-graph">Graphique</option>
+                    <option value="icofont-earth">Terre</option>
+                    <option value="icofont-image">Paysage</option>
+                    <option value="icofont-settings">Option</option>
+                    <option value="icofont-tasks-alt">Calendrier</option>
+                    <option value="icofont-simple-smile">Smiley</option>
+                    <option value="icofont-document-folder">Folder</option>
+                    <option value="icofont-live-support">Support</option>
+                    <option value="icofont-users-alt-5">People</option>
                 </select>
+            </div>
             <div class="form-group">
-                <label for="filter">Choix du filtre</label>
-                <select class="form-control" name="filter">
-                    <option value="filter-app">app</option>
-                    <option value="filter-web">web</option>
-                    <option value="filter-card">card</option>
-                </select>
-              </div>
+                <label for="titre">Titre</label>
+                <input type="text" class="form-control @error('titre') is-invalid @enderror" id="titre" name="titre" placeholder="Entrer un titre">
+                    @error('titre')
+                    <span class="invalid-feedback pl-3"> <strong>Entrer un titre</strong></span>
+                    @enderror
+            </div>
             <div class="form-group">
-                <label for="lien">lien</label>
-                <input type="text" class="form-control" id="lien" name="lien"
-                    placeholder="Entrer une description">
+                <label for="description">Description</label>
+                <input type="text" class="form-control @error('description') is-invalid @enderror" id="description" name="description" placeholder="Entrer une description">
+                    @error('description')
+                    <span class="invalid-feedback pl-3"> <strong>Entrer une description</strong></span>
+                    @enderror
             </div>
             <button type="submit" class="btn btn-success">Submit</button>
         </form>

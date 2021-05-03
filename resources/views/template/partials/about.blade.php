@@ -9,8 +9,12 @@
   
           <div class="row">
             <div class="col-lg-4" data-aos="fade-right">
-              <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
-            </div>
+              @if (File::exists('storage/img/' .$utilisateur->image))
+              <img src={{asset('storage/img/' .$utilisateur->image)}} class="img-fluid" alt="bug">
+              @else
+              <img src={{asset('assets/img/' .$utilisateur->image)}} class="img-fluid" alt="bug">
+              @endif
+          </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
               <h3>{{$utilisateur->poste}}</h3>
               <p class="font-italic">

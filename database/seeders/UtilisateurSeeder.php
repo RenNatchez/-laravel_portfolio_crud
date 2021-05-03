@@ -18,7 +18,7 @@ class UtilisateurSeeder extends Seeder
             [
                 'identite'=>"Natchez Renders",
                 'anniversaire'=>"1 May 2565",
-                'image'=>"assets/img/profile-img.jpg",
+                'image'=>"profile-img.jpg",
                 'poste'=>"Web Developer.",
                 'age'=>"39",
                 'site'=>"www.example.com",

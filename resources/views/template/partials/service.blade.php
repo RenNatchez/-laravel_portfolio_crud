@@ -14,8 +14,10 @@
               <h4 class="title"><a href="">{{$service->titre}}</a></h4>
               <p class="description">{{$service->description}}</p>
             </div>
-            
             @endforeach
+          </div>
+          <div  class="d-flex justify-content-center">
+            {{$services->links()}}
           </div>
   
         </div>

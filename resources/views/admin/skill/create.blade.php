@@ -7,13 +7,19 @@
             @csrf
             <div class="form-group">
                 <label for="name">Nom</label>
-                <input  type="text" class="form-control" id="name" name="name"
-                    placeholder="Entrer le nom">
+                <input value="{{old('name')}}" type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
+                    placeholder="Entrer un nom valide">
+                    @error('name')
+                    <span class="invalid-feedback pl-3"> <strong>Entrez un nom valide</strong></span>
+                    @enderror
             </div>
             <div class="form-group">
-                <label for="level">Nom</label>
-                <input  type="number" class="form-control" id="level" name="level"
-                    placeholder="Entrer le nombre">
+                <label for="level">Level</label>
+                <input value="{{old('level')}}" type="text" class="form-control @error('level') is-invalid @enderror" id="level" name="level"
+                    placeholder="Entrer un level valide">
+                    @error('level')
+                    <span class="invalid-feedback pl-3"> <strong>Entrez un level valide</strong></span>
+                    @enderror
             </div>
             <button type="submit" class="btn btn-success">Submit</button>
         </form>

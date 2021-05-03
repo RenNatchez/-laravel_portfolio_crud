@@ -7,7 +7,7 @@
             <div class=" my-auto px-5">
                 <h3  class="my-5"> id  : {{$service->id}}</h3>
                 <h3  class="my-5"> Titre  : {{$service->titre}}</h3>
-                <h3  class="my-5">  Description: {{$service->description}}</h3>
+                <h3  class="my-5"> Description: {{$service->description}}</h3>
             </div>
         </div>
 </div>

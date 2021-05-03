@@ -9,7 +9,7 @@
                 <label for="image">Votre fichier depuis votre pc :</label>
                 <input type="file" class="form-control-file @error('image') is-invalid @enderror" id="image" name="image">
                 @error('image')
-                <span class="invalid-feedback"> <strong>Selectioner un fichier valide</strong></span>
+                <span class="invalid-feedback pl-3"> <strong>Selectioner un fichier valide</strong></span>
                 @enderror
 
             </div>
@@ -20,12 +20,12 @@
                     <option value="filter-web">web</option>
                     <option value="filter-card">card</option>
                 </select>
-              </div>
+            </div>
             <div class="form-group">
-                <label for="lien">lien</label>
+                <label for="lien">entrer un lien</label>
                 <input type="text" class="form-control @error('lien') is-invalid @enderror" value="{{old('lien')}}" id="lien" name="lien" placeholder="Entrer une description">
                     @error('lien')
-                    <span class="invalid-feedback"> <strong>Entrez un lien valide</strong></span>
+                    <span class="invalid-feedback pl-3"> <strong>Entrer un lien valide</strong></span>
                     @enderror
             </div>
             <button type="submit" class="btn btn-success">Submit</button>

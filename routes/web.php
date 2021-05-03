@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontendController::class, 'home'])->name('home');
 // back home
 Route::get('/admin/home', [BackController::class, 'index'])->name('admin.home');
+Route::get('/admin/utilisateur/{id}/edit', [BackController::class, 'edit'])->name('utilisateur.edit');
+Route::put('/admin/utilisateur/{id}/udapte', [BackController::class, 'udapte'])->name('utilisateur.udapte');
 
 // Portfolio
 Route::get('/admin/portfolio', [PortfolioController::class, 'index'])->name('admin.portfolio');
@@ -50,7 +52,7 @@ Route::get('/admin/service/{id}', [ServiceController::class, 'show'])->name('ser
 Route::get('/admin/service/{id}/edit', [ServiceController::class, 'edit'])->name('service.edit');
 Route::put('/admin/service/{id}/udapte', [ServiceController::class, 'udapte'])->name('service.udapte');
 
-// Service
+// Fact
 Route::get('/admin/fact', [FactController::class, 'index'])->name('admin.fact');
 Route::get('/admin/createfact', [FactController::class, 'create'])->name('fact.create');
 Route::post('/admin/factstore', [FactController::class, 'store'])->name('fact.store');

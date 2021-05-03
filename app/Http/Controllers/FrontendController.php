@@ -17,7 +17,8 @@ class FrontendController extends Controller
         $utilisateur = Utilisateur::first();
         $facts = Fact::all();
         $skills = Skill::all();
-        $services = Service::all();
+        // $servicess = Service::all();
+        $services = Service::paginate(3)->fragment('services');
         $portfolios = Portfolio::all();
         return view('template.home',compact('portfolios','utilisateur','facts','skills','services'));
     }

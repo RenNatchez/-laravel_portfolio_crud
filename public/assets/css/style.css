@@ -1080,6 +1080,26 @@ section {
     padding-right: 20px 15px;
   }
 }
-.push-left{
-  margin-left: 10vw;
+.bg-admin{
+  background-color: #e9ebe6;
+  padding-left: 15vw;
+}
+.push{
+  border-radius: 15px;
+  background-color: white;
+
+}
+.btn-darkblu{
+  color: white;
+  background-color: #149ddd;
+}
+.card-admin{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.utilisateur-file{
+  position: absolute;
+  top: 51vh;
+  left: 2.5vw;
 }

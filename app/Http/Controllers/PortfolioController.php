@@ -29,11 +29,11 @@ class PortfolioController extends Controller
         $portfolio->image = $request->file('image')->hashName();
         $portfolio->lien = $request->lien;
         $portfolio->save();
-        return redirect()->route('admin.portfolio')->with('success', 'test');
+        return redirect()->route('admin.portfolio')->with('success', 'Ajouter effectuer');
  }
  public function destroy(Portfolio $id) {
      $id->delete();
-     return redirect()->back()->with('warning', 'test');
+     return redirect()->back()->with('warning', 'Suppression effectuer');
  }
  public function show(Portfolio $id){
      $portfolio = $id;
@@ -49,8 +49,8 @@ class PortfolioController extends Controller
     request()->validate([
         "filter"=>["required"],
         "image"=>["required"],
-        "lien"=>["required"],
-    ]);
+        "lien"=>["required","min:4"],
+        ]);
      $portfolio = $id;
      if ($request->file('image') != null) {
         //STORAGE

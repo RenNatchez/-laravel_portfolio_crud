@@ -15,18 +15,18 @@ class CreateUtilisateurTable extends Migration
     {
         Schema::create('utilisateur', function (Blueprint $table) {
             $table->id();
-            $table->string('identite',20);            
-            $table->string('anniversaire',20);            
+            $table->string('identite',50);            
+            $table->string('anniversaire',50);            
             $table->string('image',50);            
             $table->string('poste',50);            
             $table->string('age',50);            
-            $table->string('site',40);            
-            $table->string('degree',30);            
+            $table->string('site',100);            
+            $table->string('degree',50);            
             $table->string('phone',25);            
             $table->string('mail',50);            
-            $table->string('ville',30);            
-            $table->string('statut',20);            
-            $table->text('description',20);            
+            $table->string('ville',50);            
+            $table->string('statut',50);            
+            $table->text('description');            
             $table->timestamps();
         });
     }
